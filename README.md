@@ -27,6 +27,7 @@ CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'password';
 
 ####1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
 mysql> SELECT user FROM mysql.user
+
 ![alt text]
 
 #### 1.4. Дайте все права для пользователя sys_temp.
@@ -34,14 +35,13 @@ mysql> GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
 
 1.5. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
 mysql> SHOW GRANTS FOR 'sys_temp'@'localhost';
+
 ![alt text]
 
 1.6. Переподключитесь к базе данных от имени sys_temp.
-
-
 Для смены типа аутентификации с sha2 используйте запрос:
+ALTER USER 'sys_temp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
-ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 1.6. По ссылке https://downloads.mysql.com/docs/sakila-db.zip скачайте дамп базы данных.
 
 1.7. Восстановите дамп в базу данных.
