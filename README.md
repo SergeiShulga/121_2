@@ -53,9 +53,9 @@ ALTER USER 'sys_temp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 1.7. Восстановите дамп в базу данных.
 
+![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/003.png)
 1.8. При работе в IDE сформируйте ER-диаграмму получившейся базы данных. При работе в командной строке используйте команду для получения всех таблиц базы данных. (скриншот)
 
-![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/003.png)
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/004.png)
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/005.png)
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/006.png)
