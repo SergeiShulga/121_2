@@ -30,6 +30,7 @@ Ok. Установка завершена.
 
 #### 1.2. Создайте учётную запись sys_temp.
 Вход в консоль MySQL:  mysql -u root -p
+
 CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'password';
 
 ####1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
@@ -38,15 +39,18 @@ mysql> SELECT user FROM mysql.user
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/001.png)
 
 #### 1.4. Дайте все права для пользователя sys_temp.
+
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
 
 1.5. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
+
 mysql> SHOW GRANTS FOR 'sys_temp'@'localhost';
 
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/002.png)
 
 1.6. Переподключитесь к базе данных от имени sys_temp.
 Для смены типа аутентификации с sha2 используйте запрос:
+
 ALTER USER 'sys_temp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
 1.6. По ссылке https://downloads.mysql.com/docs/sakila-db.zip скачайте дамп базы данных.
@@ -54,6 +58,7 @@ ALTER USER 'sys_temp'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 1.7. Восстановите дамп в базу данных.
 
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/003.png)
+
 1.8. При работе в IDE сформируйте ER-диаграмму получившейся базы данных. При работе в командной строке используйте команду для получения всех таблиц базы данных. (скриншот)
 
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/004.png)
