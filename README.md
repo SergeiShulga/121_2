@@ -4,24 +4,33 @@
 #### 1.1. Поднимите чистый инстанс MySQL версии 8.0+. Можно использовать локальный сервер или контейнер Docker.
 
 Предварительно нужно установить пакет gnupg. Если не устанавливали, то:
+
 apt-get install gnupg
 
 Установим MySQL APT репозиторий, переходим на страничку:
+
 https://dev.mysql.com/downloads/
 
 Последний пакет называется mysql-apt-config_0.8.25-1_all.deb, копируем ссылку на него. Загрузим пакет:
+
 cd /tmp
+
 wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.25-1_all.deb
+
 ls -fla | grep mysql
 
 Установим пакет:
+
 dpkg -i mysql-apt-config_0.8.25-1_all.deb
 
 После установки пакета в /etc/apt/source.list.d/ добавится mysql.list.
+
 Обновляем репозиторий:
+
 apt-get update
 
 Установим MySQL сервер.
+
 apt-get install mysql-server
 
 В процессе установки нас просят установить пароль пользователя root для MySQL.
@@ -29,11 +38,13 @@ apt-get install mysql-server
 Ok. Установка завершена.
 
 #### 1.2. Создайте учётную запись sys_temp.
+
 Вход в консоль MySQL:  mysql -u root -p
 
 CREATE USER 'sys_temp'@'localhost' IDENTIFIED BY 'password';
 
 ####1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
+
 mysql> SELECT user FROM mysql.user
 
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/001.png)
@@ -44,7 +55,10 @@ mysql> GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
 
 1.5. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
 
+```
 mysql> SHOW GRANTS FOR 'sys_temp'@'localhost';
+```
+
 
 ![alt text](https://github.com/SergeiShulga/121_2/blob/main/img/002.png)
 
